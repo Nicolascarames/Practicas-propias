@@ -26,9 +26,7 @@ header {
     --menu: translate(0,-100%);
 
     display: grid;
-    grid-template-columns: repeat(3, max-content);
-    grid-template-rows: repeat(2, max-content);
-    /* grid-area: col1 / col2; */
+    grid-template-columns: repeat(2, max-content);
     justify-content: space-between;
     align-items: center;
 
