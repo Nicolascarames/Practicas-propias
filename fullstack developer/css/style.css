@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap');
+@import url(./contacto.css);
 
 
 * {
@@ -19,8 +20,8 @@
     --color8: #00dfd8;
 
 
-    --font-titulo: 'Luckiest Guy', cursive;
-    --font-text: 'Quicksand', sans-serif;
+    /* --font-titulo:  */
+    --font-text: 'Ubuntu', sans-serif; 
 }
 
 body {
@@ -39,6 +40,13 @@ li {
     height: 100vh;
     background-color: var(--color1);
 }
+
+
+
+
+/* nav */
+
+
 
 .nav {
     --open: scale(1);
@@ -72,6 +80,8 @@ li {
     grid-area: logo;
     padding: .4rem;
     transition: .2s;
+
+    z-index: 20;
 }
 
 .nav__lista {
@@ -81,6 +91,8 @@ li {
     bottom: 0;
     right: 0;
     left: 0;
+
+    z-index: 10;
 
     background-color: var(--color1);
     display: flex;
@@ -100,16 +112,51 @@ li {
     font-weight: bold;
 }
 
+
+/* titulo */
+
+
+
 .titulo {
     height: 90%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
     text-align: center;
-    color: var(--color4);
-    font-family: var(--font-titulo);
-    font-size: 4rem;
 
+    color: rgba(255, 255, 255, 0.152);
+    font-family: 'Bowlby One', cursive;
+    font-size: 2rem;
+}
+
+.titulo h1 {
+    position: relative;
+    padding: 0 5px;
+}
+
+.titulo h1::before {
+
+
+    background: linear-gradient(90deg, var(--start-color), var(--end-color));
+    content: var(--content);
+    position: absolute;
+    inset: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: titulo 9s infinite;
+    animation-delay: var(--delay);
+}
+
+@keyframes titulo {
+    0%, 16.667%, 100% {
+        opacity: 1;
+    }
+
+    33.333%, 83.333% {
+        opacity: 0;
+    }
 }
